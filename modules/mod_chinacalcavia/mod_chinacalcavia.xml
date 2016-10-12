@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade">
+	<name>MOD_CHINACALCAVIA</name>
+	<creationDate>25.07.2013</creationDate>
+	<author>Andrii Biriev</author>
+	<authorEmail>a@konservs.com</authorEmail>
+	<authorUrl>http://konservs.com/</authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<version>0.0.1</version>
+	<description>MOD_CHINACALCAVIA_DESCRIPTION</description>
+	<files>
+		<filename module="mod_chinacalcavia">mod_chinacalcavia.php</filename>
+		<filename>mod_chinacalcavia.xml</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+	<languages folder="language">
+		<language tag="ru-RU">ru-RU/ru-RU.mod_chinacalcavia.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_chinacalcavia.sys.ini</language>
+		<language tag="uk-UA">uk-UA/uk-UA.mod_chinacalcavia.ini</language>
+		<language tag="uk-UA">uk-UA/uk-UA.mod_chinacalcavia.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="view">
+				<field name="view_type" type="radio" default="sea" label="MOD_CHINACALCAVIA_TYPE_LABEL" description="MOD_CHINACALCAVIA_TYPE_DESCRIPTION">
+					<option value="sea">MOD_CHINACALCAVIA_TYPE_SEA</option>
+					<option value="avia">MOD_CHINACALCAVIA_TYPE_AVIA</option>
+                                        <option value="express">MOD_CHINACALCAVIA_TYPE_EXPRESS</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>  
+</extension>

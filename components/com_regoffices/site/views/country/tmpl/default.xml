@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_REGOFFICES_COUNTRY">
+		<message>COM_REGOFFICES_COUNTRY_DESC</message>
+	</layout>
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset name="request"
+			addfieldpath="/administrator/components/com_content/models/fields">
+
+			<field name="id" type="modal_article"
+				label="COM_REGOFFICES_FIELD_SELECT_COUTNRY_LABEL"
+				required="true"
+				edit="true"
+				clear="false"
+				description="COM_REGOFFICES_FIELD_SELECT_COUTNRY_DESC"
+			/>
+		</fieldset>
+	</fields>
+
+</metadata>

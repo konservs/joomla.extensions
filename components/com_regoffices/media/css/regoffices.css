@@ -1,0 +1,75 @@
+.regoffices-widget{
+	height: 300px;
+	background: #ccc;
+	}
+.regoffices-widget .map{
+	width: 60%;
+	float: left;
+	height: 300px;
+	}
+.regoffices-widget .map>.wr{
+	padding: 10px;
+	}
+.regoffices-widget .selector{
+	width: 40%;
+	float: left;
+	height: 300px;
+	}
+.regoffices-widget .selector>.wr{
+	padding: 10px;
+	}
+.regoffices-widget .selector h2{
+	margin: 0px 0px 10px 0px;
+	border-bottom: 1px solid #fff;
+	}
+.regoffices-widget .selector .fld-country{
+	margin-bottom: 10px;
+	}
+
+.regoffices-widget .selector ul.countries li.active>a,
+.regoffices-widget .selector ul.cities li.active>a{
+	color: #DA0F0F;
+	}
+
+
+
+#regoffices-home .description,
+#regoffices-country .description,
+#regoffices-city .description{
+	color: #aaa;
+	}
+
+#regoffices-home .regoffices-widget,
+#regoffices-country .regoffices-widget,
+#regoffices-city .regoffices-widget{
+	margin-bottom: 40px;
+	}
+
+
+
+
+.listlist{
+	}
+.listlist .active{
+	padding: 5px 10px;
+	background: #fff;
+	border: 1px solid #929292;
+	cursor: pointer;
+	}
+.listlist .list{
+	display: none;
+	position: absolute;
+	background: #fff;
+	width: 270px;
+	max-height: 300px;
+	overflow-y: auto;
+	border: 1px solid #929292;
+	border-top: none;
+	}
+.listlist .list.visible{
+	display: block;
+	}
+.listlist .list>a{
+	display: block;
+	padding: 5px 10px;
+	}

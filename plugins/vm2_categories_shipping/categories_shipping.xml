@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmshipment" method="upgrade">
+    <name>VMSHIPMENT_CATEGORIES</name>
+    <creationDate>2014-07-24</creationDate>
+    <author>Andrii Biriev</author>
+    <authorUrl>http://konservs.com</authorUrl>
+    <copyright>Copyright (C) 2013-2014, Andrii Biriev</copyright>
+    <license>GPL v3+</license>
+    <version>4.1</version>
+    <description>VMSHIPMENT_CATEGORIES_DESC</description>
+    <files>
+	<filename plugin="categories_shipping">categories_shipping.php</filename>
+	<filename>index.html</filename>
+	<folder>elements</folder>
+    </files>
+    <languages folder="language">
+	<language tag="en-GB">en-GB/en-GB.plg_vmshipment_categories_shipping.ini</language>
+	<language tag="en-GB">en-GB/en-GB.plg_vmshipment_categories_shipping.sys.ini</language>
+
+	<language tag="ru-RU">ru-RU/ru-RU.plg_vmshipment_categories_shipping.ini</language>
+	<language tag="ru-RU">ru-RU/ru-RU.plg_vmshipment_categories_shipping.sys.ini</language>
+
+	<language tag="ua-UK">ua-UK/ua-UK.plg_vmshipment_categories_shipping.ini</language>
+	<language tag="ua-UK">ua-UK/ua-UK.plg_vmshipment_categories_shipping.sys.ini</language>
+
+    </languages>
+    <scriptfile>categories_shipping.script.php</scriptfile>
+
+    <params addpath="/administrator/components/com_virtuemart/elements" />
+    <params addpath="/plugins/vmshipment/categories_shipping/categories_shipping/elements" />
+    <params addpath="/plugins/vmshipment/categories_shipping/elements" />
+
+    <params>
+	<param type="vmjpluginwarning" />
+	<param type="plugindescription" default='VMSHIPMENT_CATEGORIES_HELP' />
+	<param type="vmcatmultiselect" name="categories" default="" label="VMSHIPMENT_CATEGORIES_LIST" description="VMSHIPMENT_CATEGORIES_LIST_DESC"/>
+	<param type="radio" name="vmcatsubcats" default="1" label="VMSHIPMENT_CATEGORIES_INCLUDE" description="VMSHIPMENT_CATEGORIES_INCLUDE_DESC" >
+		<option value="0">COM_VIRTUEMART_NO</option>
+		<option value="1">COM_VIRTUEMART_YES</option>
+	</param>
+  </params>
+</install>

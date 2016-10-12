@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+<name>BrillCallback</name>
+<creationDate>Июль 2012</creationDate>
+<author>Andrii Biriev (Brilliant IT)</author>
+<authorEmail>b@brilliant.ua</authorEmail>
+<authorUrl>http://it.brilliant.ua</authorUrl>
+<copyright>Информация о копирайте</copyright>
+<license>Информация о лицензии</license>
+<version>0.0.1</version>
+<description>Описание компонента</description>
+
+
+<install>
+  <sql>
+    <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+  </sql>
+</install>
+
+<uninstall>
+  <sql>
+    <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+  </sql>
+</uninstall>
+
+<update>
+  <schemas>
+    <schemapath type="mysql">sql/updates/mysql</schemapath>
+  </schemas>
+</update>
+
+<files folder="site">
+  <filename>index.html</filename>
+  <filename>brillcallback.php</filename>
+  <filename>controller.php</filename>
+  <filename>router.php</filename>
+  <folder>models</folder>
+  <folder>views</folder>
+</files>
+<languages folder="site/language">
+  <language tag="en-GB">en-GB.com_brillcallback.ini</language>
+  <language tag="ru-RU">ru-RU.com_brillcallback.ini</language>
+  <language tag="zh-TW">zh-TW.com_brillcallback.ini</language>
+</languages>
+
+
+<administration>
+  <menu>BrillCallback</menu>
+  <files folder="admin">
+    <filename>index.html</filename>
+    <filename>brillcallback.php</filename>
+    <folder>sql</folder>
+  </files>
+</administration>
+
+</extension>

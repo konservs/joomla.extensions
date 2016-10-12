@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+<name>COM_TOURS</name>
+<creationDate>September 2014</creationDate>
+<author>Andrii Biriev (Brilliant IT)</author>
+<authorEmail>b@brilliant.ua</authorEmail>
+<authorUrl>http://it.brilliant.ua</authorUrl>
+<copyright>Информация о копирайте</copyright>
+<license>Информация о лицензии</license>
+<version>1.0.0</version>
+<description>COM_TOURS_DESCRIPTION</description>
+
+
+<install>
+  <sql>
+    <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+  </sql>
+</install>
+
+<uninstall>
+  <sql>
+    <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+  </sql>
+</uninstall>
+
+<update>
+  <schemas>
+    <schemapath type="mysql">sql/updates/mysql</schemapath>
+  </schemas>
+</update>
+
+<files folder="site">
+  <filename>index.html</filename>
+  <filename>tours.php</filename>
+  <filename>controller.php</filename>
+  <filename>router.php</filename>
+  <folder>models</folder>
+  <folder>views</folder>
+</files>
+
+<languages folder="site/language">
+	<language tag="en-GB" client="site">en-GB/en-GB.com_tours.ini</language>
+	<language tag="ru-RU" client="site">ru-RU/ru-RU.com_tours.ini</language>
+	<language tag="zh-tw" client="site">zh-tw/zh-tw.com_tours.ini</language>
+</languages>
+
+<media folder="media" destination="com_tours">
+	<filename>index.html</filename>
+	<folder>css</folder>
+	<folder>js</folder>
+	<folder>images</folder>
+</media>
+
+
+<administration>
+	<menu img="/media/com_tours/images/menu_icon.png">COM_TOURS</menu>
+	<submenu>
+		<menu link="option=com_tours" view="tours" img="/media/com_tours/images/menu_icon.png" alt="Banners/Banners">COM_TOURS_TOURS</menu>
+		<menu link="option=com_tours&amp;view=categories" view="categories" img="/media/com_tours/images/admin_menu_categories.png" alt="Banners/Сategories">COM_TOURS_CATEGORIES</menu>
+		<menu link="option=com_tours&amp;view=countries" view="countries" img="/media/com_tours/images/admin_menu_countries.png" alt="Banners/Countries">COM_TOURS_COUNTRIES</menu>
+		<menu link="option=com_tours&amp;view=cities" view="cities" img="/media/com_tours/images/admin_menu_cities.png" alt="Banners/Cities">COM_TOURS_CITIES</menu>
+		<menu link="option=com_tours&amp;view=orders" view="orders" img="/media/com_tours/images/admin_menu_orders.png" alt="Banners/Cities">COM_TOURS_ORDERS</menu>
+	</submenu>
+	<files folder="admin">
+		<filename>index.html</filename>
+		<filename>tours.php</filename>
+		<filename>controller.php</filename>
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>tables</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>sql</folder>
+	</files>
+	<languages folder="admin/language">
+		<language tag="en-GB">en-GB/en-GB.com_tours.ini</language>
+		<language tag="en-GB">en-GB/en-GB.com_tours.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.com_tours.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.com_tours.sys.ini</language>
+	</languages>
+</administration>
+
+</extension>

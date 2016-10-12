@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+<name>COM_CALCULATOR</name>
+<creationDate>February 2015</creationDate>
+<author>Andrii Biriev (Brilliant IT)</author>
+<authorEmail>a@konservs.com</authorEmail>
+<authorUrl>http://konservs.com</authorUrl>
+<copyright>Информация о копирайте</copyright>
+<license>Информация о лицензии</license>
+<version>1.0.0</version>
+<description>COM_CALCULATOR_DESCRIPTION</description>
+
+
+<install>
+	<sql>
+		<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+	</sql>
+</install>
+
+<uninstall>
+  <sql>
+    <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+  </sql>
+</uninstall>
+
+<update>
+  <schemas>
+    <schemapath type="mysql">sql/updates/mysql</schemapath>
+  </schemas>
+</update>
+
+<files folder="site">
+	<filename>index.html</filename>
+	<filename>calculator.php</filename>
+	<filename>controller.php</filename>
+	<filename>router.php</filename>
+	<folder>models</folder>
+	<folder>views</folder>
+</files>
+
+<languages folder="site/language">
+	<language tag="en-GB" client="site">en-GB/en-GB.com_calculator.ini</language>
+	<language tag="ru-RU" client="site">ru-RU/ru-RU.com_calculator.ini</language>
+	<language tag="uk-UA" client="site">uk-UA/uk-UA.com_calculator.ini</language>
+	<language tag="zh-TW" client="site">zh-TW/zh-TW.com_calculator.ini</language>
+</languages>
+
+
+<administration>
+	<menu>COM_CALCULATOR</menu>
+	<files folder="admin">
+		<filename>index.html</filename>
+		<filename>calculator.php</filename>
+		<folder>sql</folder>
+	</files>
+	<languages folder="admin/language">
+		<language tag="en-GB">en-GB/en-GB.com_calculator.ini</language>
+		<language tag="en-GB">en-GB/en-GB.com_calculator.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.com_calculator.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.com_calculator.sys.ini</language>
+	</languages>
+
+</administration>
+
+</extension>

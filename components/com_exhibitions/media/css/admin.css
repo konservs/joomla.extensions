@@ -1,0 +1,111 @@
+.icon-48-exhibitions {
+	background: url('sprites.png') 0px 0px no-repeat;
+	}
+.icon-48-exhibitions-industries{
+	background: url('sprites.png') 0px -48px no-repeat;
+	}
+.icon-48-exhibitions-cities {
+	background: url('sprites.png') 0px -96px no-repeat;
+	}
+
+.formfield{
+	overflow: hidden;
+	margin: 0px 0px 5px 0px;
+	}
+
+.formfield label{
+	width: 130px;
+	display: block;
+	float: left;
+	padding: 0px 5px 0px 0px;
+	}
+
+.tab{
+	display:none;
+	padding: 10px 5px 5px 5px;
+	border: 1px solid #ccc;
+	}
+
+.tab.active{
+	display:block;
+	}
+
+#tabs a {
+	display: inline-block;
+	padding: 5px 15px;
+	background: rgb(255, 255, 255);
+	text-decoration: none;
+	color: rgb(34, 139, 209);
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	font-weight: bold;
+	border: 1px solid rgb(34, 139, 209);
+	border-bottom: none;
+	}
+
+#tabs a.active {
+	padding-top: 7px;
+	background: rgb(34, 139, 209);
+	color: white;
+	font-weight: bold;
+	border-color: white;
+	}
+
+
+#exb_mainwrapper{
+	padding: 10px;
+	background: #fff;
+	margin: 0px 10px 0px 0px;
+	}
+
+#exb_panelwrapper{
+	padding: 10px;
+	background: #fff;
+	}
+
+.width-100{
+	width: 100%;
+	max-width: 100%;
+	}
+
+.textarea_wrapper{
+	padding: 10px 15px;
+	}
+
+.textarea_wrapper textarea{
+	min-height: 100px;
+	}
+
+.formfield a.exb_button{
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #d1d1d1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#d1d1d1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#d1d1d1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#d1d1d1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#d1d1d1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#d1d1d1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d1d1d1',GradientType=0 ); /* IE6-9 */
+	border: 1px solid rgb(182, 182, 182);
+	padding: 3px;
+	display: inline-block;
+	border-radius: 5px;
+	margin-left: 10px;
+	text-decoration: none;
+	color: #333;
+	}
+
+.formfield a.exb_button:hover{
+	color: #0B55C4;
+	}
+
+input[type="text"]{
+	width: 350px;
+	}
+
+#exb_panelwrapper input[type="text"]{
+	width: auto;
+	}

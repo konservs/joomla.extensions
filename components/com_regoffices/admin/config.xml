@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="general"
+		label="General Params"
+		description="General Params Desc">
+
+		<field
+			name="googlemaps_key"
+			type="text"
+			label="Google Maps Key"
+			description="Google Maps API key."
+			default=""
+		/>
+
+		<field
+			name="show_page_country"
+			type="radio"
+			default="1"
+			label="Show Country Pages"
+			description="Show Country Pages">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+
+		<field
+			name="show_page_region"
+			type="radio"
+			default="0"
+			label="Show Region Pages"
+			description="Show Region Pages">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+
+		<field
+			name="show_page_city"
+			type="radio"
+			default="1"
+			label="Show City Pages"
+			description="Show City Pages">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+
+
+	</fieldset>
+</config>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id$ -->
+<extension type="plugin" group="xmap" version="1.6" method="upgrade">
+    <name>Xmap - Regional offices Plugin</name>
+    <author>Andrii Biriev</author>
+    <creationDate>06.04.2016</creationDate>
+    <authorEmail>a@konservs.com</authorEmail>
+    <authorUrl>konservs.com</authorUrl>
+    <version>1.0.0</version>
+    <description>XMAP_EXHIBITIONS_PLUGIN_DESCRIPTION</description>
+    <files>
+        <filename plugin="com_regoffices">com_regoffices.php</filename>
+        <filename>index.html</filename>
+    </files>
+<!--
+    <languages folder="language">
+        <language tag="en-GB">en-GB.plg_xmap_com_exhibitions.ini</language>
+    </languages>
+-->
+</extension>

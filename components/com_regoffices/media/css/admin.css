@@ -1,0 +1,83 @@
+.icon-regoffices-cities,
+.icon-regoffices-countries{
+	position: relative;
+	}
+
+.icon-regoffices-cities:before,
+.icon-regoffices-countries:before{
+	content: "";
+	display: block;
+	background-image: URL("sprites.png");
+	background-repeat: no-repeat;
+	background-color: transparent;
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	left: -16px;
+	top: -16px;
+	}
+
+.icon-regoffices-countries:before{
+	background-position: 0px 0px;
+	}
+.icon-regoffices-cities:before{
+	background-position: 0px -48px;
+	}
+
+
+#brillianttabs{
+	height: 30px;
+	background: #999;
+	margin-bottom: 10px;
+	}
+#brillianttabs a{
+	display: block;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 15px;
+	background: #999;
+	color: #fff;
+	border-right: 1px solid #fff;
+	}
+#brillianttabs a.active{
+	background: #aaa;
+	}
+#tabs_content .tab{
+	display: none;
+	}
+#tabs_content .tab.active{
+	display: block;
+	}
+
+.formfield{
+	display: block;
+	margin-bottom: 10px;
+	}
+.formfield label{
+	display: block;
+	}
+.formfield input,
+.formfield select,
+.formfield textarea{
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	}
+
+.formfield textarea{
+	resize: vertical;
+	min-height: 300px;
+	}
+
+
+#ind_rightwrapper{
+	margin-left: 20px;
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #ccc;
+	}
+#ind_rightwrapper .onsite{
+	display: block;
+	margin: 0px 0px 10px 0px;
+	}

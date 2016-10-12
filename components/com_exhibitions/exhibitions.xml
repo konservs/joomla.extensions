@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+<name>COM_EXHIBITIONS</name>
+<creationDate>July 2013</creationDate>
+<author>Andrii Biriev (Brilliant IT)</author>
+<authorEmail>b@brilliant.ua</authorEmail>
+<authorUrl>http://it.brilliant.ua</authorUrl>
+<copyright>Информация о копирайте</copyright>
+<license>Информация о лицензии</license>
+<version>0.0.1</version>
+<description>COM_EXHIBITIONS_DESCRIPTION</description>
+
+
+<install>
+  <sql>
+    <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+  </sql>
+</install>
+
+<uninstall>
+  <sql>
+    <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+  </sql>
+</uninstall>
+
+<update>
+  <schemas>
+    <schemapath type="mysql">sql/updates/mysql</schemapath>
+  </schemas>
+</update>
+
+<files folder="site">
+  <filename>index.html</filename>
+  <filename>exhibitions.php</filename>
+  <filename>controller.php</filename>
+  <filename>router.php</filename>
+  <folder>models</folder>
+  <folder>views</folder>
+</files>
+
+<languages folder="site/language">
+	<language tag="en-GB" client="site">en-GB/en-GB.com_exhibitions.ini</language>
+	<language tag="ru-RU" client="site">ru-RU/ru-RU.com_exhibitions.ini</language>
+	<language tag="zh-tw" client="site">zh-tw/zh-tw.com_exhibitions.ini</language>
+</languages>
+
+<media folder="media" destination="com_exhibitions">
+	<filename>index.html</filename>
+	<folder>css</folder>
+	<folder>js</folder>
+	<folder>images</folder>
+</media>
+
+
+<administration>
+	<menu img="/media/com_exhibitions/images/menu_icon.png">COM_EXHIBITIONS</menu>
+	<submenu>
+		<menu link="option=com_exhibitions" view="exhibitions" img="/media/com_exhibitions/images/menu_icon.png" alt="Banners/Banners">COM_EXHIBITIONS_EXHIBITIONS</menu>
+		<menu link="option=com_exhibitions&amp;view=industries" view="industries" img="/media/com_exhibitions/images/admin_menu_industries.png" alt="Banners/industries">COM_EXHIBITIONS_INDUSTRIES</menu>
+		<menu link="option=com_exhibitions&amp;view=cities" view="cities" img="/media/com_exhibitions/images/admin_menu_cities.png" alt="Banners/Cities">COM_EXHIBITIONS_CITIES</menu>
+	</submenu>
+	<files folder="admin">
+		<filename>index.html</filename>
+		<filename>exhibitions.php</filename>
+		<filename>controller.php</filename>
+		<folder>controllers</folder>
+		<folder>tables</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>sql</folder>
+	</files>
+	<languages folder="admin/language">
+		<language tag="en-GB">en-GB/en-GB.com_exhibitions.ini</language>
+		<language tag="en-GB">en-GB/en-GB.com_exhibitions.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.com_exhibitions.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.com_exhibitions.sys.ini</language>
+	</languages>
+</administration>
+
+</extension>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+<name>COM_SIEGEBENCH</name>
+<creationDate>November 2014</creationDate>
+<author>Andrii Biriev (Brilliant IT)</author>
+<authorEmail>b@brilliant.ua</authorEmail>
+<authorUrl>http://it.brilliant.ua</authorUrl>
+<copyright>Информация о копирайте</copyright>
+<license>Информация о лицензии</license>
+<version>0.0.1</version>
+<description>COM_SIEGEBENCH_DESCRIPTION</description>
+
+
+<install>
+  <sql>
+    <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+  </sql>
+</install>
+
+<uninstall>
+  <sql>
+    <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+  </sql>
+</uninstall>
+
+<update>
+  <schemas>
+    <schemapath type="mysql">sql/updates/mysql</schemapath>
+  </schemas>
+</update>
+
+<files folder="site">
+  <filename>index.html</filename>
+  <filename>siegebench.php</filename>
+  <filename>controller.php</filename>
+  <filename>router.php</filename>
+  <folder>models</folder>
+  <folder>views</folder>
+</files>
+
+<languages folder="site/language">
+	<language tag="en-GB" client="site">en-GB/en-GB.com_siegebench.ini</language>
+	<language tag="ru-RU" client="site">ru-RU/ru-RU.com_siegebench.ini</language>
+	<language tag="zh-tw" client="site">zh-tw/zh-tw.com_siegebench.ini</language>
+</languages>
+
+<media folder="media" destination="com_siegebench">
+	<filename>index.html</filename>
+	<folder>images</folder>
+</media>
+
+
+<administration>
+	<menu img="/media/com_siegebench/images/menu_icon.png">COM_SIEGEBENCH</menu>
+	<submenu>
+		<menu link="option=com_siegebench" view="results" img="/media/com_siegebench/images/menu_icon.png" alt="Siegebench/Results">COM_SIEGEBENCH_RESULTS</menu>
+	</submenu>
+	<files folder="admin">
+		<filename>index.html</filename>
+		<filename>siegebench.php</filename>
+		<filename>controller.php</filename>
+		<folder>controllers</folder>
+		<folder>tables</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>sql</folder>
+	</files>
+	<languages folder="admin/language">
+		<language tag="en-GB">en-GB/en-GB.com_siegebench.ini</language>
+		<language tag="en-GB">en-GB/en-GB.com_siegebench.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.com_siegebench.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.com_siegebench.sys.ini</language>
+	</languages>
+</administration>
+
+</extension>

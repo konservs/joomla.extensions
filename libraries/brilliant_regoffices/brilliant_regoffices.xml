@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="1.7.0">
+	<name>Brilliant Regional Offices</name>
+	<libraryname>brilliant_regoffices</libraryname>
+	<author>Andrii Biriev</author>
+	<creationDate>July 2014</creationDate>
+	<copyright>Copyright (C) 2014</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>a@konservs.com</authorEmail>
+	<authorUrl>www.konservs.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Brilliant Regional Offices</description>
+	<files>
+		<filename>index.html</filename>
+		<filename>cities.php</filename>
+		<filename>city.php</filename>
+		<filename>countries.php</filename>
+		<filename>country.php</filename>
+		<filename>offices.php</filename>
+		<filename>office.php</filename>
+		<filename>regions.php</filename>
+		<filename>region.php</filename>
+	</files>
+</extension>
