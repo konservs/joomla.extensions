@@ -39,3 +39,5 @@ function ZipComponent($comname,$shortname){
 
 ZipComponent('AddArticle','com_addarticle');
 ZipComponent('Brillcallback','com_brillcallback');
+ZipComponent('Regoffices','com_regoffices');
+ZipComponent('Exhibitions','com_exhibitions');
