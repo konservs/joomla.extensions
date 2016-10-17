@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="1.6" method="upgrade">
+	<name>AddArticle Package</name>
+	<author>Hello World Package Team</author>
+	<creationDate>May 2012</creationDate>
+	<packagename>addarticle</packagename>
+	<version>1.0.0</version>
+	<url>https://konservs.com/</url>
+	<packager>Hello World Package Team</packager>
+	<packagerurl>http://www.yoururl.com/</packagerurl>
+	<description>Example package to combine multiple extensions</description>
+	<files folder="packages">
+	  	<file type="component" id="com_addarticle" >com_addarticle.zip</file>
+  		<file type="module" id="addarticle" client="site">mod_addarticle.zip</file>
+	</files>
+</extension>

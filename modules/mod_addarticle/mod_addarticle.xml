@@ -1,64 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="2.5.0" method="upgrade">
-	<name>Callback</name>
+	<name>AddArticle</name>
 	<creationDate>25.07.2013</creationDate>
 	<author>Andrii Biriev</author>
-	<authorEmail>b@brilliant.ua</authorEmail>
-	<authorUrl>http://it.brilliant.ua/</authorUrl>
+	<authorEmail>a@konservs.com</authorEmail>
+	<authorUrl>https://konservs.com/</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<version>0.0.1</version>
 	<description>Call back</description>
 	<files>
-		<filename module="mod_brillcallback">mod_brillcallback.php</filename>
-		<filename>mod_brillcallback.xml</filename>
+		<filename module="mod_addarticle">mod_addarticle.php</filename>
+		<filename>mod_addarticle.xml</filename>
 		<folder>tmpl</folder>
 	</files>
 	<languages folder="language">
-		<language tag="ru-RU">ru-RU/ru-RU.mod_brillcallback.ini</language>
-		<language tag="uk-UA">uk-UA/uk-UA.mod_brillcallback.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_addarticle.ini</language>
+		<language tag="uk-UA">uk-UA/uk-UA.mod_addarticle.ini</language>
 	</languages>
-
-	<config>
-		<fields name="params">
-			<fieldset name="view">
-				<field name="view_type" type="radio" default="Callback" description="">
-					<option value="callback">Callback</option>
-					<option value="simple">Simple</option>
-                                        <option value="feedback">Feedback</option>
-				</field>
-				<field name="show_name" type="radio" default="No" description="">
-                                        <option value="No">No</option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="Yes, necessary">Yes, necessary</option>
-				</field>
-				<field name="show_email" type="radio" default="No" description="">
-                                        <option value="No">No</option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="Yes, necessary">Yes, necessary</option>
-				</field>
-				<field name="show_phone" type="radio" default="No" description="">
-                                        <option value="No">No</option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="Yes, necessary">Yes, necessary</option>
-				</field>
-			</fieldset>
-			<!-- <fieldset name="basic">
-				<field
-					name="callback_email"
-					type="text"
-					default=""
-					label="email"
-					description=""
-				/>
-				<field
-					name="callback_theme"
-					type="text"
-					default=""
-					label="Тема письма"
-					description=""
-				/>
-			</fieldset> -->
-		</fields>
-	</config>  
 </extension>
