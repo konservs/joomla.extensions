@@ -11,7 +11,7 @@ class AddarticleViewAddarticle extends JViewLegacy{
 
 	public function display($tpl = null){
 		$model = $this->getModel();
-		$this->result=$model->SendMail();
+		//$this->result=$model->SendMail();
 		//Fetch exceptions
 		if(count($errors = $this->get('Errors'))){
 			foreach ($errors as $error){
