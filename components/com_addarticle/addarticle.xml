@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>AddArticle</name>
+	<creationDate>October 2016</creationDate>
+	<author>Andrii Biriev</author>
+	<authorEmail>a@konservs.com</authorEmail>
+	<authorUrl>https://konservs.com</authorUrl>
+	<copyright>(C) 2016 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<version>1.0.0</version>
+	<description>Allows custom users upload their articles</description>
+
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>addarticle.php</filename>
+		<filename>controller.php</filename>
+		<filename>router.php</filename>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB.com_addarticle.ini</language>
+		<language tag="ru-RU">ru-RU.com_addarticle.ini</language>
+		<language tag="uk-UA">uk-UA.com_addarticle.ini</language>
+	</languages>
+
+
+	<administration>
+		<menu>AddArticle</menu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>addarticle.php</filename>
+		</files>
+	</administration>
+</extension>
