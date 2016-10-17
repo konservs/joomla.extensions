@@ -1,2 +1,2 @@
-# joomla.extensions
-Various Extension for Joomla
+# Joomla Extensions
+Various Extensions for Joomla
