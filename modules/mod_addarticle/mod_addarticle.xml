@@ -19,4 +19,9 @@
 		<language tag="ru-RU">ru-RU/ru-RU.mod_addarticle.ini</language>
 		<language tag="uk-UA">uk-UA/uk-UA.mod_addarticle.ini</language>
 	</languages>
+	<media folder="media" destination="mod_addarticle">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
 </extension>
