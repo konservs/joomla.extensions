@@ -51,6 +51,20 @@ function ZipModule($comname,$shortname){
 	$zip->close();
 	}
 
+function ZipPlugin($comname,$shortgroup,$shortname){
+	echo ' -= '.$shortgroup.'/'.$shortname.' =- '.PHP_EOL;
+	$zip = new ZipArchive();
+	$filename = './plg_'.$shortgroup.'_'.$shortname.'.zip';
+	if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
+		exit("Could not open file <$filename>\n");
+		}
+	$directory = realpath('./plugins/'.$shortgroup.'/'.$shortname.'/');
+	addDirectoryToZip($zip,$directory,$directory);
+	echo "numfiles: " . $zip->numFiles . "\n";
+	echo "status:" . $zip->status . "\n";
+	$zip->close();
+	}
+
 
 function ZipPackage($pkgname,$shortname,$fls){
 	echo ' Adding package -= '.$comname.' =- '.PHP_EOL;
@@ -69,6 +83,11 @@ function ZipPackage($pkgname,$shortname,$fls){
 		echo ' Adding module "'.$fc.'.zip'.'"...'.PHP_EOL;
 		$zip->addFile($directory.'/'.$fc.'.zip','packages/'.$fc.'.zip');
 		}
+	foreach($fls['plugins'] as $fc){
+		echo ' Adding plugin "'.$fc.'.zip'.'"...'.PHP_EOL;
+		$zip->addFile($directory.'/'.$fc.'.zip','packages/'.$fc.'.zip');
+		}
+
 	$zip->addFile($directory.'/packages/'.$shortname.'.xml',$shortname.'.xml');
 	echo "numfiles: " . $zip->numFiles . "\n";
 	echo "status:" . $zip->status . "\n";
@@ -81,5 +100,9 @@ ZipModule('AddArticle','mod_addarticle');
 ZipPackage('AddArticle','pkg_addarticle',['components'=>['com_addarticle'],'modules'=>['mod_addarticle']]);
 
 //ZipComponent('Brillcallback','com_brillcallback');
-//ZipComponent('Regoffices','com_regoffices');
+
+ZipComponent('Regoffices','com_regoffices');
+ZipPlugin('Regoffices XMAP','xmap','com_regoffices');
+ZipPackage('Regoffices package','pkg_regoffices',['components'=>['com_regoffices'],'plugins'=>['plg_xmap_com_regoffices']]);
+
 //ZipComponent('Exhibitions','com_exhibitions');

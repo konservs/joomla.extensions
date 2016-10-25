@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="1.6" method="upgrade">
+	<name>regoffices Package</name>
+	<author>Hello World Package Team</author>
+	<creationDate>May 2012</creationDate>
+	<packagename>regoffices</packagename>
+	<version>1.0.0</version>
+	<url>https://konservs.com/</url>
+	<packager>Andrii Biriev</packager>
+	<packagerurl>http://konservs.com/</packagerurl>
+	<description>Package with all regoffices necessary features</description>
+	<files folder="packages">
+	  	<file type="component" id="com_regoffices" >com_regoffices.zip</file>
+  		<file type="plugin" id="regoffices" client="site">plg_regoffices.zip</file>
+	</files>
+</extension>
