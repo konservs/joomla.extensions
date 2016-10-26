@@ -17,7 +17,7 @@ class RegofficesViewRegion extends JViewLegacy{
 			return null;
 			}
 		//
-		$this->setoptions();
+		$this->getoptions();
 		//Get countries...
 		if($this->show_page_country){
 			$this->countries=$this->get('Countries');
@@ -82,7 +82,7 @@ class RegofficesViewRegion extends JViewLegacy{
 	/**
 	 *
 	 */
-	public function setoptions(){
+	public function getoptions(){
 		jimport('joomla.application.component.helper');
 		$params=JComponentHelper::getParams('com_regoffices');
 		$this->mapskey=$params->get('googlemaps_key');

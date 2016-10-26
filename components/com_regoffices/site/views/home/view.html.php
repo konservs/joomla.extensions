@@ -11,8 +11,12 @@ class RegofficesViewHome extends JViewLegacy{
 
 	public function display($tpl = null){
 		$model = $this->getModel();
+		//
+		$this->getoptions();
 		//Get countries...
-		$this->countries=$this->get('Countries');
+		if($this->show_page_country){
+			$this->countries=$this->get('Countries');
+			}
 		//Fetch exceptions
 		if(count($errors = $this->get('Errors'))){
 			foreach ($errors as $error){
@@ -39,5 +43,19 @@ class RegofficesViewHome extends JViewLegacy{
 			$doc->setMetaData('keywords',$keyw);
 			}
 		parent::display();
+		}
+	/**
+	 *
+	 */
+	public function getoptions(){
+		jimport('joomla.application.component.helper');
+		$params=JComponentHelper::getParams('com_regoffices');
+		$this->mapskey=$params->get('googlemaps_key');
+		$this->show_page_country=$params->get('show_page_country');
+		$this->show_page_region=$params->get('show_page_region');
+		$this->show_page_city=$params->get('show_page_city');
+		//
+		$this->url_offices_json=JRoute::_('index.php?option=com_regoffices&view=offices&format=json');
+		return true;
 		}
 	}
