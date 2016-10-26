@@ -51,6 +51,21 @@ function ZipModule($comname,$shortname){
 	$zip->close();
 	}
 
+function ZipLibrary($comname,$shortname){
+	echo ' -= '.$comname.' =- '.PHP_EOL;
+	$zip = new ZipArchive();
+	$filename = './lib_'.$shortname.'.zip';
+	if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
+		exit("Could not open file <$filename>\n");
+		}
+	$directory = realpath('./libraries/'.$shortname.'/');
+	addDirectoryToZip($zip,$directory,$directory);
+	echo "numfiles: " . $zip->numFiles . "\n";
+	echo "status:" . $zip->status . "\n";
+	$zip->close();
+	}
+
+
 function ZipPlugin($comname,$shortgroup,$shortname){
 	echo ' -= '.$shortgroup.'/'.$shortname.' =- '.PHP_EOL;
 	$zip = new ZipArchive();
@@ -67,7 +82,7 @@ function ZipPlugin($comname,$shortgroup,$shortname){
 
 
 function ZipPackage($pkgname,$shortname,$fls){
-	echo ' Adding package -= '.$comname.' =- '.PHP_EOL;
+	echo ' Adding package -= '.$pkgname.' =- '.PHP_EOL;
 	$zip = new ZipArchive();
 	$filename = './'.$shortname.'.zip';
 	$directory = realpath('./');
@@ -75,18 +90,31 @@ function ZipPackage($pkgname,$shortname,$fls){
 	if($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
 		exit("Could not open file <$filename>\n");
 		}
-	foreach($fls['components'] as $fc){
-		echo ' Adding component "'.$fc.'"...'.PHP_EOL;
-		$zip->addFile($directory.'/'.$fc.'.zip','packages/'.$fc.'.zip');
+	if(isset($fls['components'])){
+		foreach($fls['components'] as $fc){
+			echo ' Adding component "'.$fc.'"...'.PHP_EOL;
+			$zip->addFile($directory.'/'.$fc.'.zip','packages/'.$fc.'.zip');
+			}
 		}
-	foreach($fls['modules'] as $fc){
-		echo ' Adding module "'.$fc.'.zip'.'"...'.PHP_EOL;
-		$zip->addFile($directory.'/'.$fc.'.zip','packages/'.$fc.'.zip');
+	if(isset($fls['modules'])){
+		foreach($fls['modules'] as $fc){
+			echo ' Adding module "'.$fc.'.zip'.'"...'.PHP_EOL;
+			$zip->addFile($directory.'/'.$fc.'.zip','packages/'.$fc.'.zip');
+			}
 		}
-	foreach($fls['plugins'] as $fc){
-		echo ' Adding plugin "'.$fc.'.zip'.'"...'.PHP_EOL;
-		$zip->addFile($directory.'/'.$fc.'.zip','packages/'.$fc.'.zip');
+	if(isset($fls['plugins'])){
+		foreach($fls['plugins'] as $fc){
+			echo ' Adding plugin "'.$fc.'.zip'.'"...'.PHP_EOL;
+			$zip->addFile($directory.'/'.$fc.'.zip','packages/'.$fc.'.zip');
+			}
 		}
+	if(isset($fls['libraries'])){
+		foreach($fls['libraries'] as $fc){
+			echo ' Adding library "'.$fc.'.zip'.'"...'.PHP_EOL;
+			$zip->addFile($directory.'/'.$fc.'.zip','packages/'.$fc.'.zip');
+			}
+		}
+
 
 	$zip->addFile($directory.'/packages/'.$shortname.'.xml',$shortname.'.xml');
 	echo "numfiles: " . $zip->numFiles . "\n";
@@ -94,6 +122,7 @@ function ZipPackage($pkgname,$shortname,$fls){
 	$zip->close();
 	}
 
+ZipLibrary('Brilliant Library','brilliant');
 
 ZipComponent('AddArticle','com_addarticle');
 ZipModule('AddArticle','mod_addarticle');
@@ -101,8 +130,9 @@ ZipPackage('AddArticle','pkg_addarticle',['components'=>['com_addarticle'],'modu
 
 //ZipComponent('Brillcallback','com_brillcallback');
 
+ZipLibrary('Regoffices Library','brilliant_regoffices');
 ZipComponent('Regoffices','com_regoffices');
 ZipPlugin('Regoffices XMAP','xmap','com_regoffices');
-ZipPackage('Regoffices package','pkg_regoffices',['components'=>['com_regoffices'],'plugins'=>['plg_xmap_com_regoffices']]);
+ZipPackage('Regoffices package','pkg_regoffices',['components'=>['com_regoffices'],'plugins'=>['plg_xmap_com_regoffices'],'libraries'=>['lib_brilliant','lib_brilliant_regoffices']]);
 
 //ZipComponent('Exhibitions','com_exhibitions');
