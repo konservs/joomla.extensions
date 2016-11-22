@@ -100,7 +100,6 @@ class RegofficesModelCity extends JModelAdmin{
 			$city=new BRegofficesCity();
 			}
 		//set exhibition values;
-		//var_dump($data);die();
 		$city->status=$data['status'];
 		$city->country=$data['country'];
 		$city->region=$data['region'];
@@ -115,6 +114,7 @@ class RegofficesModelCity extends JModelAdmin{
 			$city->setlangvar('title',$data['title_'.$lang_code],$lang_code);
 			$city->setlangvar('metadesc',$data['metadesc_'.$lang_code],$lang_code);
 			$city->setlangvar('metakeyw',$data['metakeyw_'.$lang_code],$lang_code);
+			$city->setlangvar('metarobots',$data['metarobots_'.$lang_code],$lang_code);
 			}
 		//var_dump($city);die();
 		//Save

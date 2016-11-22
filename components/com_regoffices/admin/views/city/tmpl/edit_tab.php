@@ -43,4 +43,16 @@ $sef=$this->language->sef;
 		<label for="ct-metakeyw-<?php echo $lang_code; ?>"><?php echo JText::_('COM_REGOFFICES_CITY_METAKEYW'); ?></label>
 		<input type="text" id="ct-metakeyw-<?php echo $lang_code; ?>" name="city[metakeyw_<?php echo $lang_code; ?>]" class="required" value="<?php echo ($isNew?'':$this->item->getlangvar('metakeyw',$lang_code)); ?>">
 	</div>
+	<!-- META Robots -->
+	<div class="formfield">
+		<label for="ct-metarobots-<?php echo $lang_code; ?>"><?php echo JText::_('COM_REGOFFICES_CITY_METAROBOTS'); ?></label>
+		<?php $value=($isNew?'':$this->item->getlangvar('metarobots',$lang_code)); ?>
+		<select id="ct-metarobots-<?php echo $lang_code; ?>" name="city[metarobots_<?php echo $lang_code; ?>]" class="required">
+			<option value="0"<?php echo ($value==0?'selected':'') ?>>Index, Follow</option>
+			<option value="1"<?php echo ($value==1?'selected':'') ?>>Noindex, Follow</option>
+			<option value="2"<?php echo ($value==2?'selected':'') ?>>Index, Nofollow</option>
+			<option value="3"<?php echo ($value==3?'selected':'') ?>>Noindex, Nofollow</option>
+		</select>
+	</div>
+
 </div>
