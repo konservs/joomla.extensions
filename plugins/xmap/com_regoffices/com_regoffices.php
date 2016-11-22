@@ -12,11 +12,15 @@ class xmap_com_regoffices{
 		foreach($list as $itm){
 			$node = new stdClass();
 			$name=$itm->getName();
-			if(!empty($name)){
-				$node->name=$name;
-        	        	$node->expandible = false;
-        	        	$node->link = $itm->getUrl(true);
-				$xmap->printNode($node);
+			$metarobots=$itm->getlangvar('metarobots');
+			if((!empty($name))&&($metarobots==0)){
+				$url=$itm->getUrl(true);
+				if(!empty($url)){
+					$node->name=$name;
+					$node->expandible = false;
+					$node->link = $url;
+					$xmap->printNode($node);
+					}
 				}
 			}
 		//
@@ -26,11 +30,15 @@ class xmap_com_regoffices{
 		foreach($list as $itm){
 			$node = new stdClass();
 			$name=$itm->getName();
-			if(!empty($name)){
-				$node->name=$name;
-        	        	$node->expandible = false;
-        	        	$node->link = $itm->getUrl(true);
-				$xmap->printNode($node);
+			$metarobots=$itm->getlangvar('metarobots');
+			if((!empty($name))&&($metarobots==0)){
+				$url=$itm->getUrl(true);
+				if(!empty($url)){
+					$node->name=$name;
+					$node->expandible = false;
+					$node->link = $url;
+					$xmap->printNode($node);
+					}
 				}
 			}
 		//
