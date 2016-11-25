@@ -228,6 +228,7 @@ function RegofficesParseRoute($segments){
 			$alias=str_replace(':','-',$segments[0]);
 			jimport('brilliant_regoffices.cities');
 			$rocc=BRegofficesCities::getInstance();
+			$params=array();
 			if($country){
 				$params['country']=$country->id;
 				}
