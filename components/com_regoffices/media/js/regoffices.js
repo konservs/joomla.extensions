@@ -39,6 +39,9 @@ jQuery(document).ready(function(){
 					title: office.name
 					});
 				map.fitBounds(bounds);
+				if(map.getZoom() > 12){
+					map.setZoom(12);
+					}
 				}
 			window.console&&console.log('[Regoffices] All done!');
 			},
