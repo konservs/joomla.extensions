@@ -126,13 +126,13 @@ ZipLibrary('Brilliant Library','brilliant');
 
 ZipComponent('AddArticle','com_addarticle');
 ZipModule('AddArticle','mod_addarticle');
-ZipPackage('AddArticle','pkg_addarticle',['components'=>['com_addarticle'],'modules'=>['mod_addarticle']]);
+ZipPackage('AddArticle','pkg_addarticle',array('components'=>array('com_addarticle'),'modules'=>array('mod_addarticle')));
 
 //ZipComponent('Brillcallback','com_brillcallback');
 
 ZipLibrary('Regoffices Library','brilliant_regoffices');
 ZipComponent('Regoffices','com_regoffices');
 ZipPlugin('Regoffices XMAP','xmap','com_regoffices');
-ZipPackage('Regoffices package','pkg_regoffices',['components'=>['com_regoffices'],'plugins'=>['plg_xmap_com_regoffices'],'libraries'=>['lib_brilliant','lib_brilliant_regoffices']]);
+ZipPackage('Regoffices package','pkg_regoffices',array('components'=>array('com_regoffices'),'plugins'=>array('plg_xmap_com_regoffices'),'libraries'=>array('lib_brilliant','lib_brilliant_regoffices')));
 
 //ZipComponent('Exhibitions','com_exhibitions');
