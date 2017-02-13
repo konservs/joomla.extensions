@@ -17,11 +17,15 @@ class RegofficesViewOffices extends JViewLegacy{
 		$model = $this->getModel();
 		//Get filters...
 		$this->city_id=JRequest::getVar('city',0,'get','int');
+		$this->region_id=JRequest::getVar('region',0,'get','int');
 		$this->country_id=JRequest::getVar('country',0,'get','int');
 		//Form
 		$options=array();
 		if(!empty($this->city_id)){
 			$options['city']=$this->city_id;
+			}
+		if(!empty($this->region_id)){
+			$options['region']=$this->region_id;
 			}
 		if(!empty($this->country_id)){
 			$options['country']=$this->country_id;
@@ -33,6 +37,9 @@ class RegofficesViewOffices extends JViewLegacy{
 			$xoffice->name=$office->getlangvar('name');
 			$xoffice->lat=$office->lat;
 			$xoffice->lng=$office->lng;
+			$xoffice->address=$office->getlangvar('address');
+			$xoffice->phone=$office->getlangvar('phone');
+			$xoffice->site=$office->getlangvar('site');
 			$json->offices[]=$xoffice;
 			}
 		//

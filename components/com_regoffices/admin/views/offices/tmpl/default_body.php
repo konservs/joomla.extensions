@@ -9,7 +9,8 @@ defined('_JEXEC') or die('No direct access!');
 		<td><?php echo JHtml::_('grid.id',$i,$item->id); ?></td>
 		<!-- Office name -->
 		<?php $url=JRoute::_('index.php?option=com_regoffices&task=office.edit&id='.$item->id); ?>
-		<td><a href="<?php echo $url; ?>"><?php echo $this->escape($item->getname()); ?></a></td>
+		<?php $name=$item->getname(); ?>
+		<td><a href="<?php echo $url; ?>"><?php echo(empty($name)?'- unnamed -':$this->escape($name)); ?></a></td>
 		<!-- Country ISO code -->
 		<td><?php echo $item->getlangvar('address'); ?></td>
 		<!-- Cities count -->

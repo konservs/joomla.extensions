@@ -115,6 +115,7 @@ class RegofficesModelCity extends JModelAdmin{
 			$city->setlangvar('title',$data['title_'.$lang_code],$lang_code);
 			$city->setlangvar('metadesc',$data['metadesc_'.$lang_code],$lang_code);
 			$city->setlangvar('metakeyw',$data['metakeyw_'.$lang_code],$lang_code);
+			$city->setlangvar('metarobots',(int)$data['metarobots_'.$lang_code],$lang_code);
 			}
 		//var_dump($city);die();
 		//Save

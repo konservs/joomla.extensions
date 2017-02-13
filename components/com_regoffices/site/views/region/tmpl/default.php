@@ -1,8 +1,9 @@
 <?php
 defined('_JEXEC') or die('No direct access!');
 $doc=JFactory::getDocument();
+$lang=JFactory::getLanguage();
 $doc->addStylesheet('/media/com_regoffices/css/regoffices.css');
-$doc->addScript('https://maps.googleapis.com/maps/api/js?key='.$this->mapskey.'&signed_in=true');//&callback=initMap
+$doc->addScript('https://maps.googleapis.com/maps/api/js?key='.$this->mapskey.'&signed_in=true&language='.$lang->getTag());//&callback=initMap
 $jscontent='window.url_offices_json="'.$this->url_offices_json.'";'.PHP_EOL;
 $jscontent.='window.regoffices_filter={};'.PHP_EOL;
 $jscontent.='window.regoffices_filter.region='.(int)$this->region->id.';'.PHP_EOL;

@@ -8,14 +8,19 @@ if(!class_exists('JViewLegacy')){
 
 class RegofficesViewHome extends JViewLegacy{
 	protected $msg;
-
+	/**
+	 *
+	 */
 	public function display($tpl = null){
 		$model = $this->getModel();
-		//
-		$this->getoptions();
+		$this->setoptions();
 		//Get countries...
 		if($this->show_page_country){
 			$this->countries=$this->get('Countries');
+			}
+		//Get regions...
+		elseif($this->show_page_region){
+			$this->regions=$this->get('Regions');
 			}
 		//Fetch exceptions
 		if(count($errors = $this->get('Errors'))){
@@ -47,7 +52,7 @@ class RegofficesViewHome extends JViewLegacy{
 	/**
 	 *
 	 */
-	public function getoptions(){
+	public function setoptions(){
 		jimport('joomla.application.component.helper');
 		$params=JComponentHelper::getParams('com_regoffices');
 		$this->mapskey=$params->get('googlemaps_key');

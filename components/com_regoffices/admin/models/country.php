@@ -93,6 +93,7 @@ class RegofficesModelCountry extends JModelAdmin{
 			$country->setlangvar('title',$data['title_'.$lang_code],$lang_code);
 			$country->setlangvar('metadesc',$data['metadesc_'.$lang_code],$lang_code);
 			$country->setlangvar('metakeyw',$data['metakeyw_'.$lang_code],$lang_code);
+			$country->setlangvar('metarobots',$data['metarobots_'.$lang_code],$lang_code);
 			}
 		//var_dump($country);die();
 		//Save

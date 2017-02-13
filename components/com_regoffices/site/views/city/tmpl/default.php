@@ -4,13 +4,12 @@ jimport('joomla.application.component.helper');
 $mapskey=JComponentHelper::getParams('com_regoffices')->get('googlemaps_key');
 //$mapskey='AIzaSyCURPPXV_X66ukfddsJ_321GGtkhEpakI8';
 
-
-
 $doc=JFactory::getDocument();
+$lang=JFactory::getLanguage();
 $url_offices_json=JRoute::_('index.php?option=com_regoffices&view=offices&format=json');
 
 $doc->addStylesheet('/media/com_regoffices/css/regoffices.css');
-$doc->addScript('https://maps.googleapis.com/maps/api/js?key='.$mapskey.'&signed_in=true');//&callback=initMap
+$doc->addScript('https://maps.googleapis.com/maps/api/js?key='.$mapskey.'&signed_in=true&language='.$lang->getTag());//&callback=initMap
 $jscontent='window.url_offices_json="'.$url_offices_json.'";'.PHP_EOL;
 $jscontent.='window.regoffices_filter={};'.PHP_EOL;
 $jscontent.='window.regoffices_filter.city='.(int)$this->city->id.';'.PHP_EOL;

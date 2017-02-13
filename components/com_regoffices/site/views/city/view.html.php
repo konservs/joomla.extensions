@@ -81,6 +81,21 @@ class RegofficesViewCity extends JViewLegacy{
 		if(!empty($descr)){
 			$doc->setMetaData('description',$descr);
 			}
+		//Meta robots
+		$metarobots=$this->city->getlangvar('metarobots');
+		if(!empty($metarobots)){
+			switch($metarobots){
+				case 1:
+					$doc->setMetaData('robots','noindex, follow');
+					break;
+				case 2:
+					$doc->setMetaData('robots','index, nofollow');
+					break;
+				case 3:
+					$doc->setMetaData('robots','noindex, nofollow');
+					break;
+				}
+			}
 		//Meta keywords
 		$keyw=$this->city->getlangvar('metakeyw');
 		if(!empty($keyw)){
