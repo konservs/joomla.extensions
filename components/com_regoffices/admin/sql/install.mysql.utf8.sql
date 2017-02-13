@@ -23,6 +23,7 @@ CREATE TABLE `#__regoffices_countries_lang` (
 	`title` TEXT NOT NULL,
 	`metadesc` TEXT NOT NULL,
 	`metakeyw` TEXT NOT NULL,
+	`metarobots` TINYINT(1) NOT NULL DEFAULT '0',
 	`created` DATETIME NOT NULL,
 	`modified` DATETIME NOT NULL,
 	PRIMARY KEY (`country`, `language`),

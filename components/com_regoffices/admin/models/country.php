@@ -95,9 +95,8 @@ class RegofficesModelCountry extends JModelAdmin{
 			$country->setlangvar('metakeyw',$data['metakeyw_'.$lang_code],$lang_code);
 			$country->setlangvar('metarobots',$data['metarobots_'.$lang_code],$lang_code);
 			}
-		//var_dump($country);die();
 		//Save
-		if(!$country->savetodb()){                     
+		if(!$country->savetodb()){
 			return false;
 			}
 		$this->record_id=$country->id;

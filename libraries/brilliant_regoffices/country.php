@@ -31,6 +31,8 @@ class BRegofficesCountry extends BItemsItem{
 		$this->fieldAddRaw('title','string',array('multilang'=>3));
 		$this->fieldAddRaw('metadesc','string',array('multilang'=>3));
 		$this->fieldAddRaw('metakeyw','string',array('multilang'=>3));
+		$this->fieldAddRaw('metarobots','int',array('multilang'=>3));
+		//
 		$this->fieldAddRaw('created','dt',array('multilang'=>3));
 		$this->fieldAddRaw('modified','dt',array('multilang'=>3));
 		}
