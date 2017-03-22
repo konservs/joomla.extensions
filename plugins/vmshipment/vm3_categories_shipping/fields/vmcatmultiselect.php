@@ -45,7 +45,7 @@ class JFormFieldVmCatMultiSelect extends JFormField{
 	function getInput() {
 		VmConfig::loadJLang('com_virtuemart', false);
 		//Get category list...
-		$categorylist=ShopFunctions::categoryListTree(array($value));
+		$categorylist=ShopFunctions::categoryListTree(array());
 		//We nees some JS...
 		$js='';
 		$js.='var vmcatmultiselect_categorylist=\''.$categorylist.'\';';

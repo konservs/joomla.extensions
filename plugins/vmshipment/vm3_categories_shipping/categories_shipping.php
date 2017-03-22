@@ -265,13 +265,13 @@ class plgVmShipmentCategories_Shipping extends  vmPSPlugin{
 	/**
 	 * update the plugin cart_prices (
 	 *
-	 * @author Valérie Isaksen (original), Reinhold Kainhofer (tax calculations from shippingWithTax)
+	 * @author Valérie Isaksen (original), Andrii Biriev
 	 *
 	 * @param $cart_prices: $cart_prices['salesPricePayment'] and $cart_prices['paymentTax'] updated. Displayed in the cart.
 	 * @param $value :   fee
 	 * @param $tax_id :  tax id
 	 */
-	function setCartPrices (VirtueMartCart $cart, &$cart_prices, $method) {
+	function setCartPrices (VirtueMartCart $cart, &$cart_prices, $method, $progressive = true) {
 		if (!class_exists ('calculationHelper')) {
 			require(JPATH_VM_ADMINISTRATOR . DS . 'helpers' . DS . 'calculationh.php');
 			}
