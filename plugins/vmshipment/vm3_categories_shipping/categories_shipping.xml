@@ -34,6 +34,7 @@
     	<vmconfig>
 	        <fields name="params">
 			<fieldset name="plugconf" addfieldpath="/plugins/vmshipment/categories_shipping/fields">
+				<field name="description" type="PluginDescription"/>
 				<field name="categories" type="VmCatMultiSelect"/>
 			</fieldset>
 		</fields>

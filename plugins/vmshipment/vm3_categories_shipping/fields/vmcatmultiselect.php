@@ -12,21 +12,6 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 // Check to ensure this file is within the rest of the framework
 defined('JPATH_BASE') or die();
-// Add some virtuemart classes...
-/*if(!class_exists('VmConfig')){
-	require(JPATH_ROOT . DS . 'administrator' . DS . 'components' . DS . 'com_virtuemart' . DS . 'helpers' . DS . 'config.php');
-	}
-if(!class_exists('ShopFunctions')){
-	require(JPATH_VM_ADMINISTRATOR . DS . 'helpers' . DS . 'shopfunctions.php');
-	}
-if(!class_exists('TableCategories')){
-	require(JPATH_VM_ADMINISTRATOR . DS . 'tables' . DS . 'categories.php');
-	}
-if(!class_exists('VmElements')){
-	require(JPATH_VM_ADMINISTRATOR . DS . 'elements' . DS . 'vmelements.php');
-	}
-*/
-
 jimport('joomla.form.formfield');
 
 /**
@@ -58,8 +43,8 @@ class JFormFieldVmCatMultiSelect extends JFormField{
 			'var text=\'\';'.PHP_EOL.
 			'for(var i=0, n=trs.length; i<n; i++){'.PHP_EOL.
 			'	var id=(trs[i].id).substring(6);'.PHP_EOL.
-			'	var cat=trs[i].getElementById(\'vmcat-cat-\'+id);'.PHP_EOL.
-			'	var price=trs[i].getElementById(\'vmcat-price-\'+id);'.PHP_EOL.
+			'	var cat=document.getElementById(\'vmcat-cat-\'+id);'.PHP_EOL.
+			'	var price=document.getElementById(\'vmcat-price-\'+id);'.PHP_EOL.
 			'	console.log(\'cat select:\');'.PHP_EOL.
 			'	console.log(cat);'.PHP_EOL.
 			'	console.log(price);'.PHP_EOL.
@@ -69,7 +54,7 @@ class JFormFieldVmCatMultiSelect extends JFormField{
 			'	}'.PHP_EOL.
 			'vmcatmultiselect_val.value=text;'.PHP_EOL.
 			'vmcatmultiselect_val.innerHTML=text;'.PHP_EOL.
-			'}';
+			'}'.PHP_EOL.PHP_EOL;
 		//Adding categories to list
 		$js.='function vmcatmultiselect_add(cat,price){'.PHP_EOL.
 			'vmcatmultiselect_count++;'.PHP_EOL.
@@ -92,7 +77,7 @@ class JFormFieldVmCatMultiSelect extends JFormField{
 			'price.setAttribute(\'id\', \'vmcat-price-\'+vmcatmultiselect_count);'.PHP_EOL.
 			'td3.innerHTML = \'<a href="#" class="vmicon vmicon-16-remove price-remove" onclick="vmcatmultiselect_remove(\'+vmcatmultiselect_count+\'); vmcatmultiselect_refresh(); return false;"></a>\';'.PHP_EOL.
 			'vmcatmultiselect_tbl.appendChild(tr);'.PHP_EOL.
-			'}';
+			'}'.PHP_EOL.PHP_EOL;
 		//Remove tr (category row) element
 		$js.='function vmcatmultiselect_remove(id){'.PHP_EOL.
 			'var tr=document.getElementById(\'vmcat-\'+id);'.PHP_EOL.
@@ -123,7 +108,7 @@ class JFormFieldVmCatMultiSelect extends JFormField{
 			'<th>'.JText::_('VMSHIPMENT_CATEGORIES_PRICE').'</th>'.
 			'<th>'.JText::_('VMSHIPMENT_CATEGORIES_ACTION').'</th>'.
 			'</tr></table>';
-		$html.='<button onclick="vmcatmultiselect_add(0,0); vmcatmultiselect_refresh(); return false;">+</button>';
+		$html.='<button type="button" onclick="vmcatmultiselect_add(0,0); vmcatmultiselect_refresh(); return false;">+</button>';
 		$html.='<script>'.$js.'</script>';
 		//$html.='<pre>'.var_export($this,true).'</pre>';
 		return $html;
