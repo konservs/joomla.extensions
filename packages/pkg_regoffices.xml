@@ -10,7 +10,9 @@
 	<packagerurl>http://konservs.com/</packagerurl>
 	<description>Package with all regoffices necessary features</description>
 	<files folder="packages">
+	  	<file type="library" id="lib_brilliant" >lib_brilliant.zip</file>
+	  	<file type="library" id="lib_brilliant_regoffices" >lib_brilliant_regoffices.zip</file>
 	  	<file type="component" id="com_regoffices" >com_regoffices.zip</file>
-  		<file type="plugin" id="regoffices" client="site">plg_regoffices.zip</file>
+  		<file type="plugin" id="regoffices" client="site">plg_xmap_com_regoffices.zip</file>
 	</files>
 </extension>
