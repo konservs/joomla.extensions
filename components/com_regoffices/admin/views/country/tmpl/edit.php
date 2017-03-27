@@ -13,10 +13,12 @@ $isNew = ($id == 0);
 $faction=JRoute::_('index.php?option=com_regoffices&view=country&layout=edit&id='.$id);
 
 //Load some JS
-$jscontent=file_get_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'edit.js');
+$url_regions_json=JRoute::_('index.php?option=com_regoffices&view=regions&format=json',false);
+$jscontent='window.url_regions_json="'.$url_regions_json.'";'.PHP_EOL;
+$jscontent.=file_get_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'edit.js');
 $doc->addScriptDeclaration($jscontent);
 ?>
-<form action="<?php echo $faction; ?>" method="post" name="adminForm" id="cities-form">
+<form action="<?php echo $faction; ?>" method="post" name="adminForm" id="adminForm">
 	<div class="brilliant-width-60 brilliant-fltlft">
 		<div id="ind_mainwrapper">
 			<?php if(count($lang_list)>1): ?>

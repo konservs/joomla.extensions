@@ -36,7 +36,18 @@ class RegofficesViewCountries extends JViewLegacy{
 		try{
 			$this->items = $this->get('Items');
 			$this->pagination = $this->get('Pagination');
+			//
 			$doc = JFactory::getDocument();
+			if(version_compare(JVERSION, '3.0.0', 'ge')){
+				JHtml::_('jquery.framework', false);
+				}else{
+				if(!JFactory::getApplication()->get('jquery')){
+					JFactory::getApplication()->set('jquery',true);
+					$doc = JFactory::getDocument();
+					$doc->addScript(JUri::root().'media/com_regoffices/js/jquery.js');
+					}
+				}
+			//
 			$doc->addStylesheet('/media/com_regoffices/css/admin.css');
 			$doc->addScript('/media/com_regoffices/js/admin.js');
 

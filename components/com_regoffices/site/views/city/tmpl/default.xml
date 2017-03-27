@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-<layout title="COM_EXHIBITIONS_EXHIBITION_TITLE">
-<message>COM_EXHIBITIONS_EXHIBITION_DESC</message>
+<layout title="COM_REGOFFICES_HOME">
+<message>COM_REGOFFICES_HOME_DESC</message>
 </layout>
 </metadata>

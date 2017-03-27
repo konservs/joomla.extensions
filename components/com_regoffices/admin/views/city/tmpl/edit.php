@@ -18,7 +18,7 @@ $jscontent='window.url_regions_json="'.$url_regions_json.'";'.PHP_EOL;
 $jscontent.=file_get_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'edit.js');
 $doc->addScriptDeclaration($jscontent);
 ?>
-<form action="<?php echo $faction; ?>" method="post" name="adminForm" id="cities-form">
+<form action="<?php echo $faction; ?>" method="post" name="adminForm" id="adminForm">
 	<div class="brilliant-width-60 brilliant-fltlft">
 		<div id="ind_mainwrapper">
 			<?php if(count($lang_list)>1): ?>

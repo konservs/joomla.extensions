@@ -43,7 +43,6 @@ class RegofficesViewCity extends JViewLegacy{
 			$this->addToolBar();
 			//
 			$doc = JFactory::getDocument();
-
 			if(version_compare(JVERSION, '3.0.0', 'ge')){
 				JHtml::_('jquery.framework', false);
 				}else{
