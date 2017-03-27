@@ -23,7 +23,7 @@ $doc->addScriptDeclaration($jscontent);
 $doc->addScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUAKn4dyMCYfQvFivjbBs9R279YBOCek');
 ?>
 <form action="<?php echo $faction; ?>" method="post" name="adminForm" id="cities-form">
-	<div class="width-60 fltlft">
+	<div class="brilliant-width-60 brilliant-fltlft">
 		<div id="ind_mainwrapper">
 			<?php if(count($lang_list)>1): ?>
 				<div id="brillianttabs">
@@ -42,7 +42,7 @@ $doc->addScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUAKn4dyMCYf
 			</div>
 		</div>
 	</div>
-	<div class="width-40 fltlft brillsidebar">
+	<div class="brilliant-width-40 brilliant-fltlft brillsidebar">
 		<div id="ind_rightwrapper">
 			<div class="formfield">
 				<label for="regoffice_office_status"><?php echo JText::_('COM_REGOFFICES_OFFICE_STATE'); ?></label>

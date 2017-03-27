@@ -18,7 +18,7 @@ $jscontent.=file_get_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'edit.js');
 $doc->addScriptDeclaration($jscontent);
 ?>
 <form action="<?php echo $faction; ?>" method="post" name="adminForm" id="regions-form">
-	<div class="width-60 fltlft">
+	<div class="brilliant-width-60 brilliant-fltlft">
 		<div id="ind_mainwrapper">
 			<?php if(count($lang_list)>1): ?>
 				<div id="brillianttabs">
@@ -37,7 +37,7 @@ $doc->addScriptDeclaration($jscontent);
 			</div>
 		</div>
 	</div>
-	<div class="width-40 fltlft brillsidebar">
+	<div class="brilliant-width-40 brilliant-fltlft brillsidebar">
 		<div id="ind_rightwrapper">
 			<div class="">
 				<a href="" class="onsite" target="_blank">На сайте</a>

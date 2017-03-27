@@ -103,39 +103,41 @@ class RegofficesModelCountry extends JModelAdmin{
 		return true;
 		}
 	/**
-	 * Deletes 
+	 * Method to delete one or more countries
 	 *
-	 * @return boolean.
-	 */       
-	public function delete($cid){
-		if(count($cid)){
-			$db=JFactory::getDBO();
-			$cids=implode( ',', $cid);
-			$qr1='DELETE FROM #__regoffices_countries_lang '.' WHERE country IN ('.$cids.')';
-			$qr2='DELETE FROM #__regoffices_countries '.' WHERE id IN ('.$cids.')';
-
-			$db->setQuery('START TRANSACTION');
-			if(!$db->query()){
-				$db->setQuery('ROLLBACK');
-				return false;
-				}
-			$db->setQuery($qr1);
-			if (!$db->query()){
-				$db->setQuery('ROLLBACK');               
-				return false;
-				}
-			$db->setQuery($qr2);
-			if (!$db->query()){
-				$db->setQuery('ROLLBACK');               
-				return false;
-				}
-			$db->setQuery('COMMIT');
-			if (!$db->query()){
-				$db->setQuery('ROLLBACK');               
-				return false;
-				}
-			return true;
+	 * @param   array  &$pks  An array of record primary keys.
+	 *
+	 * @return  boolean  True if successful, false if an error occurs.
+	 */
+	public function delete(&$pks){
+		if(!count($pks)){
+			return false;
 			}
+		$db=JFactory::getDBO();
+		$cids=implode( ',', $pks);
+		$qr1='DELETE FROM #__regoffices_countries_lang '.' WHERE country IN ('.$cids.')';
+		$qr2='DELETE FROM #__regoffices_countries '.' WHERE id IN ('.$cids.')';
+		$db->setQuery('START TRANSACTION');
+		if(!$db->query()){
+			$db->setQuery('ROLLBACK');
+			return false;
+			}
+		$db->setQuery($qr1);
+		if (!$db->query()){
+			$db->setQuery('ROLLBACK');               
+			return false;
+			}
+		$db->setQuery($qr2);
+		if (!$db->query()){
+			$db->setQuery('ROLLBACK');               
+			return false;
+			}
+		$db->setQuery('COMMIT');
+		if (!$db->query()){
+			$db->setQuery('ROLLBACK');               
+			return false;
+			}
+		return true;
 		}
 	/**
 	 * Метод для получения данных, которые должны быть загружены в форму.

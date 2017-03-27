@@ -81,3 +81,14 @@
 	display: block;
 	margin: 0px 0px 10px 0px;
 	}
+
+
+.brilliant-width-40{
+	width: 40%;
+	}
+.brilliant-width-60{
+	width: 60%;
+	}
+.brilliant-fltlft{
+	float: left;
+	}
