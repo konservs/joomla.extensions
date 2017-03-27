@@ -7,8 +7,6 @@ $doc->addScript('https://maps.googleapis.com/maps/api/js?key='.$this->mapskey.'&
 $jscontent='window.url_offices_json="'.$this->url_offices_json.'";'.PHP_EOL;
 $jscontent.=file_get_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'default.js');
 $doc->addScriptDeclaration($jscontent);
-
-$doc->addScript('/media/com_regoffices/js/regoffices.js');
 ?>
 <div id="regoffices-home">
 	<div class="title">

@@ -15,8 +15,6 @@ $jscontent.='window.regoffices_filter={};'.PHP_EOL;
 $jscontent.='window.regoffices_filter.city='.(int)$this->city->id.';'.PHP_EOL;
 $jscontent.=file_get_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'default.js');
 $doc->addScriptDeclaration($jscontent);
-
-$doc->addScript('/media/com_regoffices/js/regoffices.js');
 ?>
 <div id="regoffices-city">
 	<div class="title">

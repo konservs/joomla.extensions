@@ -34,6 +34,18 @@ class RegofficesViewCity extends JViewLegacy{
 				}
 			}
 		//
+		$doc = JFactory::getDocument();
+		if(version_compare(JVERSION, '3.0.0', 'ge')){
+			JHtml::_('jquery.framework', false);
+			} else {
+			if(!JFactory::getApplication()->get('jquery')){
+				JFactory::getApplication()->set('jquery',true);
+				$doc = JFactory::getDocument();
+				$doc->addScript(JUri::root().'media/com_regoffices/js/jquery.js');
+				}
+			}
+		$doc->addScript('/media/com_regoffices/js/regoffices.js');
+		//
 		jimport('brilliant.general');
 		$url_current = bfull_url($_SERVER);
 		$url_need = rtrim(JUri::base(), '/').JRoute::_('index.php?option=com_regoffices&view=city&id='.$this->city->id);
