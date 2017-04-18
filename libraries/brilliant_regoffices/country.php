@@ -86,10 +86,12 @@ class BRegofficesCountry extends BItemsItem{
 			$db->quote($this->getlangvar('title',$language->lang_code)).','.
 			$db->quote($this->getlangvar('metadesc',$language->lang_code)).','.
 			$db->quote($this->getlangvar('metakeyw',$language->lang_code)).','.
+			((int)$this->getlangvar('metarobots',$language->lang_code)).','.
 			'"'.$created->format('Y-m-d H:i:s').'",'.
 			'"'.$modified->format('Y-m-d H:i:s').'")';
 			}
-		$qr3='INSERT INTO #__regoffices_countries_lang (`country`,`language`,`name`,`alias`,`description`,`h1`,`title`,`metadesc`,`metakeyw`,`created`,`modified`) VALUES'.implode(',',$qr3vals);
+		$qr3='INSERT INTO #__regoffices_countries_lang (`country`,`language`,`name`,`alias`,`description`,`h1`';
+		$qr3.=',`title`,`metadesc`,`metakeyw`,`metarobots`,`created`,`modified`) VALUES'.implode(',',$qr3vals);
 		//
 		$db->setQuery('START TRANSACTION');
 		if(!$db->query()){
@@ -170,10 +172,12 @@ class BRegofficesCountry extends BItemsItem{
 			$db->quote($this->getlangvar('title',$language->lang_code)).','.
 			$db->quote($this->getlangvar('metadesc',$language->lang_code)).','.
 			$db->quote($this->getlangvar('metakeyw',$language->lang_code)).','.
+			((int)$this->getlangvar('metarobots',$language->lang_code)).','.
 			'"'.$created->format('Y-m-d H:i:s').'",'.
 			'"'.$modified->format('Y-m-d H:i:s').'")';
 			}
-		$qr3='INSERT INTO #__regoffices_countries_lang (`country`,`language`,`name`,`alias`,`description`,`h1`,`title`,`metadesc`,`metakeyw`,`created`,`modified`) VALUES'.implode(',',$qr3vals);
+		$qr3='INSERT INTO #__regoffices_countries_lang (`country`,`language`,`name`,`alias`,`description`,`h1`,';
+		$qr3.='`title`,`metadesc`,`metakeyw`,`metarobots`,`created`,`modified`) VALUES'.implode(',',$qr3vals);
 		//
 		$db->setQuery($qr2);
 		if(!$db->query()){
@@ -204,5 +208,4 @@ class BRegofficesCountry extends BItemsItem{
 			}
 		return JRoute::_('index.php?option=com_regoffices&view=country&id='.$this->id);
 		}
-
 	}
