@@ -136,3 +136,4 @@ ZipPackage('Regoffices package','pkg_regoffices',array('components'=>array('com_
 ZipPlugin('Virtuemart 2 - shipment by categories','vmshipment','vm2_categories_shipping');
 ZipPlugin('Virtuemart 3 - shipment by categories','vmshipment','vm3_categories_shipping');
 
+ZipComponent('BLogin','com_blogin');
