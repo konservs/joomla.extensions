@@ -22,6 +22,7 @@ class BloginViewSmslogin extends JViewLegacy{
 				$model->loginRegister($this->phonenum);
 				}
 			}
+		$this->codeSent = $model->codeSent;
 		$doc=JFactory::getDocument();
 		//
 		$descr=JText::_('COM_BLOGIN_SMSLOGIN_METADESC');

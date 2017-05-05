@@ -36,9 +36,20 @@ class TSMSRouter{
 	//
 	//================================================================================
 	public function TryConnect(){
-		if($this->connected)return TRUE;
+		if($this->connected){
+			return TRUE;
+			}
 		$this->log.='Connecting...'.PHP_EOL;
 		$this->client=new SoapClient('http://turbosms.in.ua/api/wsdl.html');
+		if(empty($this->username)){
+			$this->log.='TurboSMS username is empty!'.PHP_EOL;
+			return false;
+			}
+		if(empty($this->password)){
+			$this->log.='TurboSMS password is empty!'.PHP_EOL;
+			return false;
+			}
+
 		$auth = Array ( 
 			'login' => $this->username, 
 			'password' => $this->password
@@ -46,7 +57,6 @@ class TSMSRouter{
 		$this->log.='Logging in...'.PHP_EOL;
 		$result=$this->client->Auth($auth); 
 		$this->log.='Logon result: '.$result->AuthResult.PHP_EOL;
-//echo($this->log);
 		return TRUE;
 		}
 	public function CreditBalance(){
