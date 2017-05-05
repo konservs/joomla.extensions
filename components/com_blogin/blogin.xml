@@ -33,14 +33,13 @@
   <filename>index.html</filename>
   <filename>blogin.php</filename>
   <filename>controller.php</filename>
-  <filename>router.php</filename>
   <folder>models</folder>
   <folder>views</folder>
 </files>
 <languages folder="site/language">
-  <language tag="en-GB">en-GB.com_blogin.ini</language>
-  <language tag="ru-RU">ru-RU.com_blogin.ini</language>
-  <language tag="zh-TW">zh-TW.com_blogin.ini</language>
+  <language tag="en-GB">en-GB/en-GB.com_blogin.ini</language>
+  <language tag="ru-RU">ru-RU/ru-RU.com_blogin.ini</language>
+  <language tag="zh-TW">zh-TW/zh-TW.com_blogin.ini</language>
 </languages>
 
 
