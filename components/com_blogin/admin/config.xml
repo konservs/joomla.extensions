@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="general"
+		label="General Params"
+		description="General Params Desc">
+
+		<field
+			name="googlemaps_key"
+			type="text"
+			label="Google Maps Key"
+			description="Google Maps API key."
+			default=""
+		/>
+	</fieldset>
+</config>
