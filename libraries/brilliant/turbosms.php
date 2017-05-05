@@ -2,12 +2,8 @@
 //------------------------------------------------------------
 // mail api
 //
-// Author: Andrii Biriev, b@brilliant.ua
-// Copyright © Brilliant IT corporation, www.it.brilliant.ua
+// Author: Andrii Biriev
 //------------------------------------------------------------
-//require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'mail_general_api.php');
-//require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'db_api.php');
-//require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'login_api.php');
 
 class TSMSRouter{
 	private $client;
@@ -22,10 +18,10 @@ class TSMSRouter{
 	//================================================================================
 	public function __construct(){
 		$this->connected=false;
-		$this->username='toreador';//'toreador.com.ua';
-		//$this->password='brr3qVXMDz';
+		//TODO: fill these values!
+		$this->username='';//
 		$this->password='';
-		$this->router='Toreador';
+		$this->router='';
 		}
 	//================================================================================
 	// Returns the global Session object, only creating it
@@ -146,4 +142,3 @@ class TSMSRouter{
 		return TRUE;
 		}
 	}
-?>
