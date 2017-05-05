@@ -53,8 +53,18 @@ class TSMSRouter{
 		$result=$this->client->GetCreditBalance(); 
 		return (float)$result->GetCreditBalanceResult;
 		}
+	/**
+	 *
+	 */
 	public function SendSimple(){
-		if((empty($this->destination))||(empty($this->text))) return FALSE;
+		if(empty($this->destination)){
+			$this->log.='Destination number is empty!'.PHP_EOL;
+			return FALSE;
+			}
+		if(empty($this->text)){
+			$this->log.='SMS text is empty!'.PHP_EOL;
+			return FALSE;
+			}
 
 		if(substr($this->destination,0,4)=='+380'){
 			//All ok
@@ -73,8 +83,10 @@ class TSMSRouter{
 		//$db=BMySQL::getInstanceAndConnect();
 		//if(empty($db))
 		//	return FALSE;
-		if(empty($this->client))
+		if(empty($this->client)){
+			$this->log.='Client is not connected!'.PHP_EOL;
 			return FALSE;
+			}
 		$sms=Array(
 			'sender'=>$this->router,
 			'destination'=>$this->destination,
@@ -140,5 +152,11 @@ class TSMSRouter{
 			}
 		$db->commit();
 		return TRUE;
+		}
+	/**
+	 *
+	 */
+	public function getLog(){
+		return $this->log;
 		}
 	}

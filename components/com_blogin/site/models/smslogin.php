@@ -46,6 +46,27 @@ class BloginModelSmslogin extends JModelItem{
 	 *
 	 */
 	public function loginRegister($phonenum){
+		$phonenum2 = $this->getPhoneCanonical($phonenum);
+		if(strlen($phonenum2)!=12){
+			JError::raiseWarning('PHONE_DIGITS', 'Wrong digits count!');
+			return false;
+			}
+		jimport('brilliant.turbosms');
+		$sms = TSMSRouter::getInstance();
+		$sms->destination = $phonenum2;
+		$sms->text = 'Ваш код: '.$smscode;
+
+		$r = $sms->tryConnect();
+		if(!$r){
+			JError::raiseWarning('TURBOSMS_CONNECT', 'Could not connect! TurboSMS error: '.$sms->getLog());
+			return false;
+			}
+		$r = $sms->SendSimple();
+		if(!$r){
+			JError::raiseWarning('PHONE_DIGITS', 'Could not send! TurboSMS error: '.$sms->getLog());
+			return false;
+			}
+		var_dump($phonenum2); die();
 		return true;
 		}
 
