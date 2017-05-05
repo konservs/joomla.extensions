@@ -48,6 +48,9 @@
   <files folder="admin">
     <filename>index.html</filename>
     <filename>blogin.php</filename>
+    <filename>controller.php</filename>
+    <folder>models</folder>
+    <folder>views</folder>
     <folder>sql</folder>
   </files>
 </administration>
